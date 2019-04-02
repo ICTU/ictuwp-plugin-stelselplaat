@@ -5,28 +5,12 @@
 // * Plugin Name:         ICTU / WP Nieuwe opzet stelselplaat digitaleoverheid.nl (2019)
 // * Plugin URI:          https://github.com/ICTU/Digitale-Overheid---WordPress-plugin-Stelselplaat/
 // * Description:         Plugin voor digitaleoverheid.nl waarmee extra functionaliteit mogelijk wordt voor het tonen van de stelselplaat voor de samenhang tussen voorzieningen, standaarden en basisregistraties
-// * Version:             0.0.1
+// * Version:             1.0.1
 // * Version description: Eerste opzet.
 // * Author:              Paul van Buuren
 // * Author URI:          https://wbvb.nl
 // * License:             GPL-2.0+
 // *
-
-// * DO_Stelselplaat - dosp.acf-definitions-functions.php
-// * ----------------------------------------------------------------------------------
-// * definitions and aux. functions for Advanced Custom Fields
-// * ----------------------------------------------------------------------------------
-// * Description:         Plugin voor digitaleoverheid.nl waarmee extra functionaliteit mogelijk wordt voor het tonen van de stelselplaat voor de samenhang tussen voorzieningen, standaarden en basisregistraties
-// * @author            Paul van Buuren
-// * @license           GPL-2.0+
-// * @package           do-stelselplaat
-// * version:           0.0.1
-// * @version-desc.     Eerste opzet.
-// * @link              https://github.com/ICTU/Digitale-Overheid---WordPress-plugin-Stelselplaat/
-// * Text Domain:       do-stelselplaat
-// * Domain Path:       /languages
-
-
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -49,14 +33,9 @@ if ( ! class_exists( 'DO_Stelselplaat' ) ) :
       /**
        * @var string
        */
-      public $version = '0.0.1';
+      public $version = '1.0.1';
   
   
-      /**
-       * @var DO Stelselplaat
-       */
-      public $gcmaturity = null;
-
       /**
        * @var DO Stelselplaat
        */
@@ -106,10 +85,6 @@ if ( ! class_exists( 'DO_Stelselplaat' ) ) :
         define( 'DO_SP_PATH',                    plugin_dir_path( __FILE__ ) );
         define( 'DO_SP_PATH_LANGUAGES',          trailingslashit( DO_SP_PATH . 'languages' ) );;
 
-        define( 'DO_SP_VOORZIENING_CPT',          "voorziening" );
-        define( 'DO_SP_BASISREGISTRATIE_CPT',     "basisregistratie" );
-        define( 'DO_SP_STANDAARD_CPT',            "standaard" );
-
 
         define( 'DO_SP_PLUGIN_DO_DEBUG',         true );
 //        define( 'DO_SP_PLUGIN_DO_DEBUG',         false );
@@ -118,18 +93,8 @@ if ( ! class_exists( 'DO_Stelselplaat' ) ) :
         define( 'DO_SP_PLUGIN_GENESIS_ACTIVE',   true ); // todo: inbouwen check op actief zijn van Genesis framework
 
         define( 'DO_SP_PLUGIN_KEY',              'ictudo_stelselplaat' ); 
- 
-        define( 'DO_SP_NR_QUARTERS',              5 );
-
-
-        define( 'do_sp_CSS_YEARWIDTH',           13 ); // 12ems per year + 1em margin right
-        define( 'do_sp_CSS_QUARTERWIDTH',        3 ); 
-        define( 'do_sp_CSS_PADDINGLEFT',         26 ); // basically do_sp_CSS_YEARWIDTH but then twice
 
         define( 'DO_SP_ARCHIVE_CSS',            'dopt-header-css' );  
-
-        //define( 'DO_SP_CSS_RADIALGRADIENT', true );
-        define( 'DO_SP_CSS_RADIALGRADIENT', false );
 
        }
   
@@ -194,14 +159,8 @@ if ( ! class_exists( 'DO_Stelselplaat' ) ) :
 
         global $post;
 
-        if( in_the_loop() && is_single() && ( DO_SP_VOORZIENING_CPT == get_post_type() || DO_SP_BASISREGISTRATIE_CPT == get_post_type() ) ) {
-//          return $content . do_sp_frontend_display_actielijn_info( $post->ID );
-          return $content;
-        }
-        else {
-          return $content;
-        }
-        
+        return $content;
+
       }
   
     	//========================================================================================================
@@ -211,17 +170,11 @@ if ( ! class_exists( 'DO_Stelselplaat' ) ) :
       * @param  string  $post_info
       * @return string  $post_info
       */
-      function filter_postinfo($post_info) {
+      function filter_postinfo( $post_info ) {
         global $wp_query;
         global $post;
-        
 
-        if ( is_single() && ( DO_SP_VOORZIENING_CPT == get_post_type() || DO_SP_BASISREGISTRATIE_CPT == get_post_type() ) ) {
-          return '';
-        }
-        else {
-          return $post_info;
-        }
+        return $post_info;
 
       }
     
@@ -232,15 +185,15 @@ if ( ! class_exists( 'DO_Stelselplaat' ) ) :
        */
       public function autoload( $class ) {
   
-          $classes = $this->plugin_classes();
-  
-          $class_name = strtolower( $class );
-  
-          if ( isset( $classes[$class_name] ) && is_readable( $classes[$class_name] ) ) {
-            echo 'require: ' . $classes[$class_name]. '<br>';
-            die();
-            require_once( $classes[$class_name] );
-          }
+        $classes = $this->plugin_classes();
+
+        $class_name = strtolower( $class );
+
+        if ( isset( $classes[$class_name] ) && is_readable( $classes[$class_name] ) ) {
+          echo 'require: ' . $classes[$class_name]. '<br>';
+          die();
+          require_once( $classes[$class_name] );
+        }
   
       }
   
@@ -251,13 +204,10 @@ if ( ! class_exists( 'DO_Stelselplaat' ) ) :
        */
       private function do_sp_init_setup_actions() {
 
-        
         // add a page temlate name
         $this->templates                      = array();
         $this->templatefile   		            = 'stelselplaat-template.php';
 
-        add_action( 'init',                   'do_sp_init_register_post_type' );
-        
         // add the page template to the templates list
         add_filter( 'theme_page_templates',   array( $this, 'do_sp_init_add_page_templates' ) );
         
@@ -267,8 +217,8 @@ if ( ! class_exists( 'DO_Stelselplaat' ) ) :
         // admin settings
         add_action( 'admin_init',             array( $this, 'do_sp_admin_register_settings' ) );
         
+        // add styling and scripts
         add_action( 'wp_enqueue_scripts',     array( $this, 'do_sp_frontend_register_frontend_style_script' ) );
-
         add_action( 'admin_enqueue_scripts',  array( $this, 'do_sp_admin_register_styles' ) );
 
 
@@ -280,8 +230,8 @@ if ( ! class_exists( 'DO_Stelselplaat' ) ) :
        */
       private function do_sp_init_setup_filters() {
 
-        	// content filter
-          add_filter( 'the_content', array( $this, 'do_sp_frontend_filter_for_preview' ) );
+      	// content filter
+        add_filter( 'the_content', array( $this, 'do_sp_frontend_filter_for_preview' ) );
 
       }
 
@@ -294,7 +244,7 @@ if ( ! class_exists( 'DO_Stelselplaat' ) ) :
       * @return array Expanded array of page templates.
       */
       function do_sp_init_add_page_templates( $post_templates ) {
-      
+
         $post_templates[$this->templatefile]  = _x( 'Stelselplaat DO', "naam template", "do-stelselplaat" );    
         return $post_templates;
       
@@ -305,7 +255,7 @@ if ( ! class_exists( 'DO_Stelselplaat' ) ) :
     	/**
     	 * Register the options page
     	 *
-    	 * @since    0.0.1
+    	 * @since    1.0.1
     	 */
     	public function do_sp_admin_register_settings() {
   
@@ -363,12 +313,12 @@ if ( ! class_exists( 'DO_Stelselplaat' ) ) :
   
         if ( !is_admin() && ( $this->templatefile == $page_template ) ) {
 
-          $header_css .= ".actielijnen { ";
-          $header_css .= " width: 100em;";   
-          $header_css .= "} ";
+//          $header_css .= ".actielijnen { ";
+//          $header_css .= " width: 100em;";   
+//          $header_css .= "} ";
 
 
-          wp_enqueue_style( DO_SP_ARCHIVE_CSS, DO_SP_ASSETS_URL . 'css/do-stelselplaat.css', array(), DO_SP_VERSION, 'all' );
+          wp_enqueue_style( DO_SP_ARCHIVE_CSS, DO_SP_ASSETS_URL . 'css/do-stelselplaat-frontend.css', array(), DO_SP_VERSION, 'all' );
         
           if ( $header_css ) {
             wp_add_inline_style( DO_SP_ARCHIVE_CSS, $header_css );
@@ -385,149 +335,60 @@ if ( ! class_exists( 'DO_Stelselplaat' ) ) :
        */
        
       public function do_sp_do_frontend_pagetemplate_add_actielijnen() {
+        
+        $dearray = array( 'standaarden', 'voorzieningen', 'basisregistraties' );
 
-        echo 'actielijnen';
+        echo '<div class="flex-block">';
+
+        foreach ( $dearray as $voorziening ) {
+
+          $this->do_sp_do_frontend_toon_item( $voorziening );
+
+        }    
+
+        echo '</div>';
+        
+      }    
+    
+      //========================================================================================================
+      /**
+       * Handles the front-end display. 
+       *
+       * @return void
+       */
+       
+      public function do_sp_do_frontend_toon_item( $item ) {
+        
+        global $post;
+        
+        if ( function_exists( 'get_field' ) ) {
+
+          $title    = get_field( 'title_' . $item, $post->ID );
+          if ( ! $title ) {
+            $title = $item;
+          }
+          $dossiers    = get_field( 'link_' . $item, $post->ID );
+          
+          if ( $dossiers ) {
+            
+            echo '<section  id="' . sanitize_title( $title ) . '" class="infrablock">';
+            echo '<h2 id="title-' . sanitize_title( $title ) . '">' . $title . '</h2>';
+            
+            echo '<ul aria-labelledby="title-' . sanitize_title( $title ) . '">';
+            
+            foreach ( $dossiers as $dossier ) {
+              $terminfo = get_term( $dossier );
+              echo '<li class="' . $terminfo->slug . '"><a href="' . get_permalink( $terminfo->term_id ) . '">' . $terminfo->name . '</a></li>';
+            }
+            
+            echo '</ul>';
+            echo '</section>';
+
+          }
+        }
 
       }    
   
-    //====================================================================================================
-
-    public function do_sp_frontend_filter_breadcrumb( $crumb, $args ) {
-    
-      if ( $crumb ) {
-        
-        $span_before_start  = '<span class="breadcrumb-link-wrap" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">';  
-        $span_between_start = '<span itemprop="name">';  
-        $span_before_end    = '</span>';  
-        $loop               = rhswp_get_context_info();
-        $berichtnaam        = get_the_title();
-
-        $planning_page      = get_field( 'planning_page', 'option');
-        $planning_page_id   = $planning_page->ID;
-        
-        if ( !$planning_page_id ) {
-          $planning_page_id = get_option( 'page_for_posts' );
-        }  
-  
-        if( ( is_single() && DO_SP_VOORZIENING_CPT == get_post_type() ) || 
-            ( is_single() && DO_SP_BASISREGISTRATIE_CPT == get_post_type() ) ) {
-
-        	if ( $planning_page_id ) {
-        		return '<a href="' . get_permalink( $planning_page_id ) . '">' . get_the_title( $planning_page_id ) .'</a>' . $args['sep'] . ' ' . $berichtnaam;
-        	}
-        	else {
-        		return $crumb;
-        	}
-      	}
-      	else {
-      		return $crumb;
-      	}
-      }
-    }
-
-    //====================================================================================================
-
-    /**
-     * Handles the front-end display. 
-     *
-     * @return void
-     */
-    public function do_sp_do_frontend_single_actielijn_info() {
-    
-      global $post;
-      
-      $echo         = true;
-      $showheader   = true;
-      $returnstring = '';
-      $actielijnentitletext = '';
-      
-      if ( is_single() && DO_SP_VOORZIENING_CPT == get_post_type() ) {
-        
-      }
-
-      if ( $echo ) {
-        echo $returnstring;
-      }
-      else {
-        return $returnstring;
-      }
-
-      
-    }
-
-    //====================================================================================================
-
-    /**
-     * Handles the front-end display. 
-     *
-     * @return void
-     */
-    public function do_sp_do_frontend_single_gebeurtenis_info() {
-    
-      global $post;
-      
-      $echo                   = true;
-      $showheader             = true;
-      $returnstring           = '';
-      $actielijnentitletext   = '';
-      $acfid                  = $post->ID;
-
-      if ( is_single() && DO_SP_BASISREGISTRATIE_CPT == get_post_type() ) {
-        
-      }
-
-      if ( $echo ) {
-        echo $returnstring;
-      }
-      else {
-        return $returnstring;
-      }
-      
-    }
-
-    //====================================================================================================
-
-    /**
-     * Append related actielijnen or gebeurtenissen
-     */
- 
-    public function do_sp_frontend_display_actielijn_info( $postid, $showheader = false, $echo = false, $startyear = '', $endyear = '', $titletext = '', $actielijnentitletext = '' ) {
-    
-      $returnstring = '';
-
-      if ( DO_SP_BASISREGISTRATIE_CPT == get_post_type( $postid ) ) {
-        
-      }
-      elseif ( DO_SP_VOORZIENING_CPT == get_post_type( $postid ) ) {
-        
-      } 
-
-      if ( $echo ) {
-        echo $returnstring;
-      }
-      else {
-        return $returnstring;
-      }
-
-    }
-
-
-    //====================================================================================================
-
-    /**
-    * wrap the content in a wrapper as to limit its max width
-    */
-    public function do_sp_frontend_append_content_wrapper($content) {
-      
-      if( is_singular() && is_main_query() ) {
-    
-        // wrap the content in a wrapper
-        $content = '<div class="wrap">' . $content . '</div>';
-    		
-    	}	
-    	return $content;
-    	
-    }
 
     //====================================================================================================
 
@@ -542,38 +403,14 @@ if ( ! class_exists( 'DO_Stelselplaat' ) ) :
 
       if ( $this->templatefile == $page_template ) {
 
-        //* Force full-width-content layout
-        add_filter( 'genesis_pre_get_option_site_layout', '__genesis_return_full_width_content' );
-
-        // wrap the text in a wrapper to contain its widths
-        add_filter('the_content', array( $this, 'do_sp_frontend_append_content_wrapper' ), 15 );
-
         // append actielijnen
         add_action( 'genesis_after_entry_content',   array( $this, 'do_sp_do_frontend_pagetemplate_add_actielijnen' ), 15 );
 
       }
 
     	//=================================================
-    	
-      if ( is_single() && ( DO_SP_VOORZIENING_CPT == get_post_type() || DO_SP_BASISREGISTRATIE_CPT == get_post_type() ) ) {
 
-        // check the breadcrumb
-        add_filter( 'genesis_single_crumb',   array( $this, 'do_sp_frontend_filter_breadcrumb' ), 10, 2 );
-        add_filter( 'genesis_page_crumb',     array( $this, 'do_sp_frontend_filter_breadcrumb' ), 10, 2 );
-        add_filter( 'genesis_archive_crumb',  array( $this, 'do_sp_frontend_filter_breadcrumb' ), 10, 2 ); 				
-
-        add_filter( 'genesis_post_info',   array( $this, 'filter_postinfo' ), 10, 2 );
-
-
-        if ( DO_SP_VOORZIENING_CPT == get_post_type() ) {
-          add_action( 'genesis_entry_content',  array( $this, 'do_sp_do_frontend_single_actielijn_info' ) );
-        }
-        
-        if ( DO_SP_BASISREGISTRATIE_CPT == get_post_type() ) {
-          add_action( 'genesis_entry_content',  array( $this, 'do_sp_do_frontend_single_gebeurtenis_info' ) );
-        }
-
-      }
+      add_filter( 'genesis_post_info',   array( $this, 'filter_postinfo' ), 10, 2 );
 
     }
 
@@ -684,69 +521,6 @@ function do_sp_init_load_plugin_textdomain() {
   load_plugin_textdomain( "do-stelselplaat", false, basename( dirname( __FILE__ ) ) . '/languages' );
 
 }
-
-//========================================================================================================
-
-add_filter('the_post_navigation', 'do_sp_remove_post_navigation_for_actielijn');
-
-function do_sp_remove_post_navigation_for_actielijn( $args ){
-
-  if ( DO_SP_VOORZIENING_CPT == get_type() ) {
-    return '';
-  }
-  else {
-    return '';
-  }  
-  return $args;
-
-}
-
-//========================================================================================================
-
-/**
- * Append related actielijnen or gebeurtenissen
- */
- 
-function do_sp_frontend_get_gebeurtenissen_for_actielijn( $args ) {
-
-  $returnstring         = '';
-
-  $defaults = array(
-  	'showheader'            => 0,
-  	'echo'                  => false,
-  	'headertag'             => 'h2',
-  	'startyear'             => '',
-  	'endyear'               => '',
-  	'titletext'             => __( 'Gebeurtenissen', "do-stelselplaat" )
-  );
-  
-  /**
-   * Parse incoming $args into an array and merge it with $defaults
-   */ 
-  $args = wp_parse_args( $args, $defaults );
-  
-  
-  if ( ! isset( $args['id'] ) ) {
-    return;
-  }
-
-
-  if ( $args['echo'] ) {
-    echo $returnstring;
-  }
-  else {
-    return $returnstring;
-  }
-
-
-
-}
-
-//========================================================================================================
-
-add_filter('acf/update_value/name=related_gebeurtenissen_actielijnen', 'do_sp_bidirectional_acf_update_value', 10, 3);
-
-add_filter('acf/update_value/name=related_actielijnen', 'do_sp_bidirectional_acf_update_value', 10, 3);
 
 //========================================================================================================
 

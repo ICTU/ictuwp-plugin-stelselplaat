@@ -8,7 +8,7 @@
 // * @author  Paul van Buuren
 // * @license GPL-2.0+
 // * @plugin: do-stelselplaat
-// * version: 0.0.1
+// * version: 1.0.1
 // * @desc.   Eerste opzet.
 // * @link    https://github.com/ICTU/Digitale-Overheid---WordPress-plugin-Stelselplaat/
 
@@ -49,4 +49,32 @@
 	
  
  */
+@media print, screen {
+  .infrablock {
+    border: 1px solid #e2e2e2;
+    padding: 1em;
+    margin-top: 1em;
+  }
+  .infrablock h2,
+  .infrablock h3 {
+    margin-top: 0;
+  }
+  .infrablock ul {
+    margin-bottom: 0;
+  }
+}
+@media only screen and (min-width: 821px) {
+  .flex-block {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+  }
+  .flex-block .infrablock {
+    flex-grow: 1;
+    flex-basis: 47.5%;
+    max-width: 47.5%;
+    margin-left: 1.25%;
+    margin-right: 1.25%;
+  }
+}
 /*# sourceMappingURL=do-stelselplaat-frontend.css.map */

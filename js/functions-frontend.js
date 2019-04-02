@@ -3,7 +3,7 @@
 // * 
 // * Plugin Name:         DO_Stelselplaat
 // * Plugin URI:          https://github.com/ICTU/Digitale-Overheid---WordPress-plugin-Stelselplaat/
-// * version:             0.0.1
+// * version:             1.0.1
 // * @desc.               Eerste opzet.
 // * Author:              Paul van Buuren
 // * Author URI:          https://wbvb.nl

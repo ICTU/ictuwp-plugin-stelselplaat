@@ -26,11 +26,45 @@ cd '/shared-paul-files/Webs/temp/'
 find . -name ‘*.DS_Store’ -type f -delete
 
 
+# --------------------------------------------------------------------------------------------------------------------------------
+# Vertalingen --------------------------------------------------------------------------------------------------------------------
+# --------------------------------------------------------------------------------------------------------------------------------
+
+# copy to 2nd temp dir
+rsync -r -a --delete '/shared-paul-files/Webs/temp/languages/' '/shared-paul-files/Webs/temp-languages/'
+
+# remove the .pot from 2nd folder
+rm '/shared-paul-files/Webs/temp-languages/do-stelselplaat.pot'
+rm '/shared-paul-files/Webs/temp-languages/index.php'
+
+
+
+# copy files to /wp-content/languages/themes
+rsync -ah '/shared-paul-files/Webs/temp-languages/' '/shared-paul-files/Webs/ICTU/Gebruiker Centraal/development/wp-content/languages/plugins/'
+
+# languages erics server
+rsync -ah '/shared-paul-files/Webs/temp-languages/' '/shared-paul-files/Webs/ICTU/Gebruiker Centraal/live-dutchlogic/wp-content/languages/plugins/'
+
+# languages Sentia accept
+rsync -ah '/shared-paul-files/Webs/temp-languages/' '/shared-paul-files/Webs/ICTU/Gebruiker Centraal/sentia/accept/www/wp-content/languages/plugins/'
+
+# languages Sentia live
+rsync -ah '/shared-paul-files/Webs/temp-languages/' '/shared-paul-files/Webs/ICTU/Gebruiker Centraal/sentia/live/www/wp-content/languages/plugins/'
+
+
+# --------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
 # copy from temp dir to dev-env
 rsync -r -a --delete '/shared-paul-files/Webs/temp/' '/shared-paul-files/Webs/ICTU/Gebruiker Centraal/development/wp-content/plugins/do-stelselplaat/' 
 
 # remove temp dir
 rm -rf '/shared-paul-files/Webs/temp/'
+
+# remove 2nd temp dir
+rm -rf '/shared-paul-files/Webs/temp-languages/'
 
 
 

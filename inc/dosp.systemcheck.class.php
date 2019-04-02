@@ -1,9 +1,24 @@
 <?php
 
+// * DO_Stelselplaat - dosp.systemcheck.class.php
+// * ----------------------------------------------------------------------------------
+// * initial system checks and conditions
+// * ----------------------------------------------------------------------------------
+// * @author            Paul van Buuren
+// * @license           GPL-2.0+
+// * @package           do-stelselplaat
+// * version:           1.0.1
+// * @version-desc.     Eerste opzet.
+// * @link              https://github.com/ICTU/Digitale-Overheid---WordPress-plugin-Stelselplaat/
+// * Text Domain:       do-stelselplaat
+// * Domain Path:       /languages
+
+
 if ( ! defined( 'ABSPATH' ) ) {
     exit; // disable direct access
 }
 
+//========================================================================================================
 
 /**
  * Check for common issues with the server environment and WordPress install.
@@ -16,7 +31,7 @@ class do_sp_SystemCheck {
      * Constructor
      */
     public function __construct() {
-        $this->options = get_site_option( 'do_sp_systemcheck_v1.0.5' );
+        $this->options = get_site_option( 'do_sp_systemcheck_v1.0.1' );
     }
 
     /**
@@ -41,7 +56,7 @@ class do_sp_SystemCheck {
 
             if ( wp_verify_nonce( $nonce, "gcms-dismiss-{$key}" ) ) {
                 $this->options[$key] = false;
-                update_site_option( 'do_sp_systemcheck_v1.0.5', $this->options );
+                update_site_option( 'do_sp_systemcheck_v1.0.1', $this->options );
             }
         }
     }
@@ -50,7 +65,7 @@ class do_sp_SystemCheck {
      * Update our stored messages
      */
     private function updateSystemCheck() {
-        update_site_option( 'do_sp_systemcheck_v1.0.5', $this->options );
+        update_site_option( 'do_sp_systemcheck_v1.0.1', $this->options );
     }
 
     /**

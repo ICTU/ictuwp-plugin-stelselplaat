@@ -1,1 +1,1 @@
-{"version":3,"sources":[],"names":[],"mappings":"","file":"do-stelselplaat-frontend.css"}
+{"version":3,"sources":["../less/do-stelselplaat-frontend.less"],"names":[],"mappings":";;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;AA4DA;EAEE;IACE,yBAAA;IACA,YAAA;IACA,eAAA;;EAHF,WAKE;EALF,WAKM;IACF,aAAA;;EANJ,WASE;IACE,gBAAA;;;AAkBN,wBAAwD;EAEtD;IACE,aAAA;IACA,mBAAA;IACA,uBAAA;;EAHF,WAKE;IACC,YAAA;IACC,iBAAA;IACA,gBAAA;IACA,kBAAA;IACA,mBAAA","file":"do-stelselplaat-frontend.css"}
