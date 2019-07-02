@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: GC Maturity\n"
-"POT-Creation-Date: 2019-01-15 23:59+0100\n"
-"PO-Revision-Date: 2019-02-06 11:56+0100\n"
+"POT-Creation-Date: 2019-07-02 15:03+0200\n"
+"PO-Revision-Date: 2019-07-02 15:03+0200\n"
 "Last-Translator: Paul van Buuren <paul@wbvb.nl>\n"
 "Language-Team: paul@wbvb.nl\n"
 "Language: nl_NL\n"
@@ -10,7 +10,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 2.2.1\n"
+"X-Generator: Poedit 2.2.3\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-Flags-xgettext: --add-comments=translators:\n"
 "X-Poedit-WPHeader: do-stelselplaat.php\n"
@@ -21,155 +21,32 @@ msgstr ""
 "X-Poedit-SearchPath-0: .\n"
 "X-Poedit-SearchPathExcluded-0: *.js\n"
 
-#: do-stelselplaat.php:284
+#: do-stelselplaat.php:248
 msgctxt "naam template"
-msgid "Stelselplaat DO"
-msgstr "Stelselplaat-pagina"
+msgid "Stelselplaat DO (2019)"
+msgstr "Stelselplaat DO (2019)"
 
-#: do-stelselplaat.php:301
+#: do-stelselplaat.php:265
 msgid "General settings"
 msgstr "Algemene instellingen"
 
-#: do-stelselplaat.php:333
+#: do-stelselplaat.php:297
 msgid "Documentation"
 msgstr "Documentatie"
 
-#: do-stelselplaat.php:334
+#: do-stelselplaat.php:298
 msgid "Stelselplaat documentatie"
 msgstr ""
 
-#: do-stelselplaat.php:706
-msgid "Gebeurtenissen"
+#: do-stelselplaat.php:410
+msgctxt "naam template"
+msgid "Basisinfrastructuur (GDI)"
 msgstr ""
 
-#: inc/dosp.posttypes-taxonomies.php:15
-msgctxt "labels"
-msgid "Voorziening"
-msgstr ""
-
-#: inc/dosp.posttypes-taxonomies.php:16
-msgctxt "labels"
-msgid "Voorzieningen"
-msgstr ""
-
-#: inc/dosp.posttypes-taxonomies.php:18
-msgctxt "labels"
-msgid "voorziening"
-msgstr ""
-
-#: inc/dosp.posttypes-taxonomies.php:19
-msgctxt "labels"
-msgid "voorzieningen"
-msgstr ""
-
-#: inc/dosp.posttypes-taxonomies.php:25 inc/dosp.posttypes-taxonomies.php:74
-#: inc/dosp.posttypes-taxonomies.php:123
+#: do-stelselplaat.php:448
 #, php-format
-msgctxt "labels"
-msgid "All %s"
-msgstr "Alle  %s"
-
-#: inc/dosp.posttypes-taxonomies.php:26 inc/dosp.posttypes-taxonomies.php:30
-#: inc/dosp.posttypes-taxonomies.php:75 inc/dosp.posttypes-taxonomies.php:79
-#: inc/dosp.posttypes-taxonomies.php:124 inc/dosp.posttypes-taxonomies.php:128
-#, php-format
-msgctxt "labels"
-msgid "Add %s"
-msgstr "%s toevoegen"
-
-#: inc/dosp.posttypes-taxonomies.php:27 inc/dosp.posttypes-taxonomies.php:76
-#: inc/dosp.posttypes-taxonomies.php:125
-#, php-format
-msgctxt "labels"
-msgid "Add new %s"
-msgstr "Nieuwe  %s toevoegen"
-
-#: inc/dosp.posttypes-taxonomies.php:28 inc/dosp.posttypes-taxonomies.php:77
-#: inc/dosp.posttypes-taxonomies.php:126
-msgctxt "labels"
-msgid "Edit?"
-msgstr "Bewerken?"
-
-#: inc/dosp.posttypes-taxonomies.php:29 inc/dosp.posttypes-taxonomies.php:78
-#: inc/dosp.posttypes-taxonomies.php:127
-#, php-format
-msgctxt "labels"
-msgid "Edit %s"
-msgstr "%s bewerken"
-
-#: inc/dosp.posttypes-taxonomies.php:31 inc/dosp.posttypes-taxonomies.php:80
-#: inc/dosp.posttypes-taxonomies.php:129
-msgctxt "labels"
-msgid "Show"
-msgstr "Toon"
-
-#: inc/dosp.posttypes-taxonomies.php:32 inc/dosp.posttypes-taxonomies.php:81
-#: inc/dosp.posttypes-taxonomies.php:130
-#, php-format
-msgctxt "labels"
-msgid "View %s"
-msgstr "Bekijk  %s"
-
-#: inc/dosp.posttypes-taxonomies.php:33 inc/dosp.posttypes-taxonomies.php:82
-#: inc/dosp.posttypes-taxonomies.php:131
-#, php-format
-msgctxt "labels"
-msgid "Search %s"
-msgstr "%s zoeken"
-
-#: inc/dosp.posttypes-taxonomies.php:34 inc/dosp.posttypes-taxonomies.php:83
-#: inc/dosp.posttypes-taxonomies.php:132
-#, php-format
-msgctxt "labels"
-msgid "No %s available"
-msgstr "Geen  %s gevonden"
-
-#: inc/dosp.posttypes-taxonomies.php:35 inc/dosp.posttypes-taxonomies.php:84
-#: inc/dosp.posttypes-taxonomies.php:133
-#, php-format
-msgctxt "labels"
-msgid "No %s in trash"
-msgstr "Geen  %s in de prullenbak"
-
-#: inc/dosp.posttypes-taxonomies.php:36 inc/dosp.posttypes-taxonomies.php:85
-#: inc/dosp.posttypes-taxonomies.php:134
-msgctxt "labels"
-msgid "Parent"
-msgstr "Parent"
-
-#: inc/dosp.posttypes-taxonomies.php:64
-msgctxt "labels"
-msgid "Basisregistratie"
-msgstr ""
-
-#: inc/dosp.posttypes-taxonomies.php:65
-msgctxt "labels"
-msgid "Basisregistraties"
-msgstr ""
-
-#: inc/dosp.posttypes-taxonomies.php:67
-msgctxt "labels"
-msgid "basisregistratie"
-msgstr ""
-
-#: inc/dosp.posttypes-taxonomies.php:68
-msgctxt "labels"
-msgid "basisregistraties"
-msgstr ""
-
-#: inc/dosp.posttypes-taxonomies.php:113
-msgctxt "labels"
-msgid "Standaard"
-msgstr ""
-
-#: inc/dosp.posttypes-taxonomies.php:114 inc/dosp.posttypes-taxonomies.php:117
-msgctxt "labels"
-msgid "Standaarden"
-msgstr ""
-
-#: inc/dosp.posttypes-taxonomies.php:116
-msgctxt "labels"
-msgid "standaard"
+msgctxt "Toelichting bij stelselonderdeel"
+msgid "Het onderdeel '%s' bestaat uit %s dossiers, namelijk:"
 msgstr ""
 
 #. Plugin Name of the plugin/theme
@@ -195,6 +72,50 @@ msgstr ""
 #. Author URI of the plugin/theme
 msgid "https://wbvb.nl"
 msgstr ""
+
+#~ msgctxt "labels"
+#~ msgid "All %s"
+#~ msgstr "Alle  %s"
+
+#~ msgctxt "labels"
+#~ msgid "Add %s"
+#~ msgstr "%s toevoegen"
+
+#~ msgctxt "labels"
+#~ msgid "Add new %s"
+#~ msgstr "Nieuwe  %s toevoegen"
+
+#~ msgctxt "labels"
+#~ msgid "Edit?"
+#~ msgstr "Bewerken?"
+
+#~ msgctxt "labels"
+#~ msgid "Edit %s"
+#~ msgstr "%s bewerken"
+
+#~ msgctxt "labels"
+#~ msgid "Show"
+#~ msgstr "Toon"
+
+#~ msgctxt "labels"
+#~ msgid "View %s"
+#~ msgstr "Bekijk  %s"
+
+#~ msgctxt "labels"
+#~ msgid "Search %s"
+#~ msgstr "%s zoeken"
+
+#~ msgctxt "labels"
+#~ msgid "No %s available"
+#~ msgstr "Geen  %s gevonden"
+
+#~ msgctxt "labels"
+#~ msgid "No %s in trash"
+#~ msgstr "Geen  %s in de prullenbak"
+
+#~ msgctxt "labels"
+#~ msgid "Parent"
+#~ msgstr "Parent"
 
 #~ msgid "GC Maturity documentation"
 #~ msgstr "Documentatie Gebuiker Centraal Volwassenheidsscore"

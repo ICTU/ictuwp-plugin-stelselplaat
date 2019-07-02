@@ -7,8 +7,8 @@
 // * @author            Paul van Buuren
 // * @license           GPL-2.0+
 // * @package           do-stelselplaat
-// * version:           1.0.1
-// * @version-desc.     Eerste opzet.
+// * version:           2.0.1
+// * @version-desc.     CSS en extra invoerfunctionaliteit.
 // * @link              https://github.com/ICTU/Digitale-Overheid---WordPress-plugin-Stelselplaat/
 // * Text Domain:       do-stelselplaat
 // * Domain Path:       /languages
@@ -18,6 +18,12 @@ if ( ! defined( 'ABSPATH' ) ) {
     exit; // disable direct access
 }
 
+/*
+paraaf : 2051 electronische paraaf
+smartphone : 2054 smartphone
+invulformulier : 2069 invulformulier
+*/	
+
 
 //========================================================================================================
 
@@ -25,6 +31,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 if( function_exists('acf_add_local_field_group') ) {
 
   //======================================================================================================
+
+/*
 
   acf_add_local_field_group(array(
   	'key' => 'group_5c5aeb4e30d19',
@@ -176,6 +184,8 @@ if( function_exists('acf_add_local_field_group') ) {
   	'active' => 1,
   	'description' => '',
   ));
+
+*/
 
 
   //======================================================================================================  

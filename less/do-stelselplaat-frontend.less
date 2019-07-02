@@ -9,8 +9,8 @@
 // * @author  Paul van Buuren
 // * @license GPL-2.0+
 // * @plugin: do-stelselplaat
-// * version: 1.0.1
-// * @desc.   Eerste opzet.
+// * version: 2.0.1
+// * @desc.   CSS en extra invoerfunctionaliteit.
 // * @link    https://github.com/ICTU/Digitale-Overheid---WordPress-plugin-Stelselplaat/
 
 
@@ -56,26 +56,28 @@
 @flexbasis_twocols:   47.5%;
 @flexmargin:          ( ( 50% - @flexbasis_twocols ) / 2 );
 
+
+@achtergrond:	@bordercolor;
+@dekleur: 		@txt;
+
+@pijlhoogte:	80px;
+@pijlbreedte:	30px;
+
 //========================================================================================================
 
 @media print, screen {
-
-  .infrablock {
-    border: 1px solid @bordercolor;
-    padding: 1em;  
-    margin-top: 1em;
-    
-    h2, h3 {
-      margin-top: 0;
-    }
-    
-    ul {
-      margin-bottom: 0;
-    }
-    
-  }
-
-
+	
+	.infrablock {
+		
+		h2, h3 {
+			margin-top: 0;
+		}
+		
+		ul {
+			margin-top: 0;
+			margin-bottom: 0;
+		}
+	}
 }
 
 
@@ -83,29 +85,174 @@
 
 @media screen {
 
+	.infrablock {
+		margin-bottom: 1rem;
+		padding: 1rem;  
+		border: 5px solid @achtergrond;
+		
+		ul li {
+			display: flex;
+			flex-direction: row;
+			margin-bottom: .5em;
+			
+			&:before,
+			a {
+				flex: 1;
+			}
+			
+			&:before {
+				max-width: 30px;
+			}
+	
+		}
+		
+		&.smartphone {
+			ul {
+				padding-left: 0;
+				li {
+					.iconaddfill( '../assets/images/list-icon-smartphone.svg', @dekleur, 28);
+				}		
+			}		
+		}
+		&.invulformulier {
+			ul {
+				padding-left: 0;
+				li {
+					.iconaddfill( '../assets/images/list-icon-invulformulier.svg', @dekleur, 28);
+				}		
+			}		
+		}
+		&.paraaf {
+			ul {
+				padding-left: 0;
+				li {
+					.iconaddfill( '../assets/images/list-icon-paraaf.svg', @dekleur, 28);
+				}		
+			}		
+		}
+	}
 }
-
 
 //========================================================================================================
 
+@media only screen and ( max-width: @breakpoint_chart ) {
+	#blok_0 {
+		.visuallyhidden();
+	}
+}
+
+//========================================================================================================
+
+
 @media only screen and ( min-width: @breakpoint_chart ) {
 
-  .flex-block {
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: center;
+	.flex-block {
+		display: flex;
+		flex-flow: row wrap;
+		justify-content: center;
 
-    .infrablock {
-	    flex-grow: 1;
-      flex-basis: @flexbasis_twocols;
-      max-width: @flexbasis_twocols;
-      margin-left: @flexmargin;
-      margin-right: @flexmargin;
-    }
+		.kader {
+			padding: 1rem;
+			background: @achtergrond;
+			
+			&, *, a {
+				color: @dekleur;
+			}
+		}
 
-  }
+		.infrablock {
+			flex-grow: 1;
+			flex-basis: @flexbasis_twocols;
+			max-width: @flexbasis_twocols;
+			margin-left: @flexmargin;
+			margin-right: @flexmargin;
+			margin-bottom: 0;
+			border-style: none;
+			padding: 0;
+		}
 
+		.spaak {
+			h2 {
+				background: @blauw3;
+				span {
+					background: @blauw3;
+					color: @wit;
+					padding: .25rem;
+				}
+				max-width: 25%;
+				text-align: center;
+				margin-left: auto;
+				margin-right: auto;
+				border-radius: 50%;
+				padding: 4rem 1rem;
+				margin-top: 1rem;
+				margin-bottom: 1rem;
+			}
+		}
+	}
+	
+	#blok_0 {
+		flex-basis: 100%;
+		max-width: 100%;
+		order: 2;
+	}
+	#blok_1 {
+		order: 1;
+		
+		.kader {
+			position: relative;
+//			padding-bottom: @pijlhoogte;
+		}
+
+		&:after {
+			content: ' ';
+			background: @achtergrond;
+			width: @pijlbreedte;
+			height: @pijlhoogte;
+			transform: translateX( ( -1 * ( @pijlbreedte / 2 ) ) );
+			display: block;
+			position: relative;
+			left: 50%;
+		}
+	}
+	#blok_2 {
+		order: 3;
+		&:before {
+			transform: rotate(40deg);
+			left: 66%;
+		}
+	}
+	#blok_3 {
+		order: 4;
+		&:before {
+			transform: rotate(-40deg);
+			left: 25%;
+		}
+	}
+	
+	#blok_2,
+	#blok_3 {
+		margin-top: -40px;
+		
+		&:before {
+			content: ' ';
+			background: @achtergrond;
+			width: @pijlbreedte;
+			height: ( 2 * @pijlhoogte );
+			display: block;
+			position: relative;
+		}
+		.kader {
+			margin-top: -35px;
+		}
+	}
+	#blok_3 {
+		order: 4;
+	}
+	
 }
+
+
 
 //========================================================================================================
 
@@ -113,7 +260,37 @@
   
 }
 
-//========================================================================================================
+//=========================================================================================================
+
+.iconaddfill(@src, @fill_new, @size: 24 ) {
+
+	@factor: 1.2;
+
+	@data-uri:          data-uri('image/svg+xml;charset=UTF-8', "@{src}");
+	@replace_what:   	escape('fill="#0000FF"');
+	@replace_with:		escape('fill="@{fill_new}"');
+	@replacesrc1:		replace("@{data-uri}", @replace_what, @replace_with, "g");
+
+	list-style-image: none;
+	list-style: none;
+	padding-left: 0;
+	margin-left: 0;
+	
+	&:before {
+		content: ' ';
+		display: inline-block;
+		width: ( @size * @factor * .05rem );
+		height: ( @size * @factor * .05rem );
+		background-image: e(@replacesrc1);
+		background-size: ( @size * .05rem ) ( @size * .05rem );
+		background-repeat: no-repeat;
+		background-position: center center;
+		margin-right: .5em;
+	}
+
+}
+
+//=========================================================================================================
 
 @media print {
   

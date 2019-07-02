@@ -10,8 +10,9 @@ Plugin voor tonen en bijhouden stelselplaat op digitaleoverheid.nl
 * 
 
 ## Current version:
-1.0.1 - Eerste opzet.
+2.0.1 - CSS en extra invoerfunctionaliteit.
 
 ## Version history
+* 2.0.1 - CSS en extra invoerfunctionaliteit.
 * 1.0.1 - Eerste opzet.
 

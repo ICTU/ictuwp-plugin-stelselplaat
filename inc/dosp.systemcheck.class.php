@@ -31,7 +31,7 @@ class do_sp_SystemCheck {
      * Constructor
      */
     public function __construct() {
-        $this->options = get_site_option( 'do_sp_systemcheck_v1.0.1' );
+        $this->options = get_site_option( 'do_sp_systemcheck_v2.0.1' );
     }
 
     /**
