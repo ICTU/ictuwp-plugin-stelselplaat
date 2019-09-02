@@ -5,8 +5,8 @@
 // * Plugin Name:         ICTU / WP Nieuwe opzet stelselplaat digitaleoverheid.nl (2019)
 // * Plugin URI:          https://github.com/ICTU/Digitale-Overheid---WordPress-plugin-Stelselplaat/
 // * Description:         Plugin voor digitaleoverheid.nl waarmee extra functionaliteit mogelijk wordt voor het tonen van de stelselplaat voor de samenhang tussen voorzieningen, standaarden en basisregistraties
-// * Version:             2.0.1
-// * Version description: CSS en extra invoerfunctionaliteit.
+// * Version:             2.0.2
+// * Version description: CSS kleur voor iconen verbeterd.
 // * Author:              Paul van Buuren
 // * Author URI:          https://wbvb.nl
 // * License:             GPL-2.0+
@@ -36,7 +36,7 @@ if ( ! class_exists( 'DO_Stelselplaat' ) ) :
 		/**
 		* @var string
 		*/
-		public $version = '2.0.1';
+		public $version = '2.0.2';
 		
 		
 		/**
@@ -255,7 +255,7 @@ if ( ! class_exists( 'DO_Stelselplaat' ) ) :
 		/**
 		* Register the options page
 		*
-		* @since    2.0.1
+		* @since    2.0.2
 		*/
 		public function do_sp_admin_register_settings() {
 			
@@ -435,9 +435,11 @@ if ( 22 == 33 ) {
 					
 						$blokcounter++;
 
-						$stelselplaatblok_titel		= get_sub_field('stelselplaatblok_titel');
-						$stelselplaatblok_icoon		= get_sub_field('stelselplaatblok_icoon');
-						$stelselplaatblok_dossiers	= get_sub_field('stelselplaatblok_dossiers');
+						$stelselplaatblok_titel			= get_sub_field('stelselplaatblok_titel');
+						$stelselplaatblok_icoon			= get_sub_field('stelselplaatblok_icoon');
+						$stelselplaatblok_dossiers		= get_sub_field('stelselplaatblok_dossiers');
+//						$stelselplaatblok_toelichting	= get_sub_field('stelselplaatblok_toelichting');
+						
 						$blokid						= sanitize_title( 'blok_' . $blokcounter );
 						
 						echo '<section  id="' . $blokid . '" class="infrablock ' . $stelselplaatblok_icoon . '">';
@@ -450,7 +452,7 @@ if ( 22 == 33 ) {
 
 						foreach ( $stelselplaatblok_dossiers as $dossier ) {
 							$terminfo = get_term( $dossier );
-							echo '<li class="' . $terminfo->slug . '"><a href="' . get_permalink( $terminfo->term_id ) . '">' . $terminfo->name . '</a></li>';
+							echo '<li class="' . $terminfo->slug . '"><a href="' . get_term_link( $terminfo->term_id ) . '">' . $terminfo->name . '</a></li>';
 						}
 						
 						echo '</ul>';

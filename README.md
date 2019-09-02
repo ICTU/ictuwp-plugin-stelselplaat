@@ -10,9 +10,10 @@ Plugin voor tonen en bijhouden stelselplaat op digitaleoverheid.nl
 * 
 
 ## Current version:
-2.0.1 - CSS en extra invoerfunctionaliteit.
+2.0.2 - CSS kleur voor iconen verbeterd.
 
 ## Version history
+* 2.0.2 - CSS kleur voor iconen verbeterd.
 * 2.0.1 - CSS en extra invoerfunctionaliteit.
 * 1.0.1 - Eerste opzet.
 

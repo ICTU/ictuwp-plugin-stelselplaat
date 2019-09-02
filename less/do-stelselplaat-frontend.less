@@ -9,8 +9,8 @@
 // * @author  Paul van Buuren
 // * @license GPL-2.0+
 // * @plugin: do-stelselplaat
-// * version: 2.0.1
-// * @desc.   CSS en extra invoerfunctionaliteit.
+// * version: 2.0.2
+// * @desc.   CSS kleur voor iconen verbeterd.
 // * @link    https://github.com/ICTU/Digitale-Overheid---WordPress-plugin-Stelselplaat/
 
 
@@ -150,6 +150,7 @@
 		display: flex;
 		flex-flow: row wrap;
 		justify-content: center;
+		margin-top: 2rem;
 
 		.kader {
 			padding: 1rem;
@@ -267,7 +268,7 @@
 	@factor: 1.2;
 
 	@data-uri:          data-uri('image/svg+xml;charset=UTF-8', "@{src}");
-	@replace_what:   	escape('fill="#0000FF"');
+	@replace_what:   	escape('fill="#00f"');
 	@replace_with:		escape('fill="@{fill_new}"');
 	@replacesrc1:		replace("@{data-uri}", @replace_what, @replace_with, "g");
 
