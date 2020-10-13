@@ -1,0 +1,52 @@
+/*!
+
+//**
+// * DO Stelselplaat - do-stelselplaat-frontend.less
+// * ----------------------------------------------------------------------------------
+// * CSS for front-end
+// * ----------------------------------------------------------------------------------
+// * @author  Paul van Buuren
+// * @license GPL-2.0+
+// * @plugin: do-stelselplaat
+// * version: 2.0.3.b
+// * @desc.   Link naar CSS-bestanden gecheckt.
+// * @link    https://github.com/ICTU/Digitale-Overheid---WordPress-plugin-Stelselplaat/
+
+
+<!--                                                            -->
+<!-- ========================================================   -->
+<!--                                                            -->
+<!--                  .:::::::::::::::}}}}}}}                   -->
+<!--                  .:::::::::::::::}}}}}}}                   -->
+<!--                  .:::::::::::::::}}}}}}}                   -->
+<!--              ````.:::::::::::::::::}}}}}``````             -->
+<!--        ``.------------------::::::::::::::::}}}::.`        -->
+<!--      `.---------------------::::::::::::::::}}}}}}}:`      -->
+<!--     `-----------------------::::::::::::::::}}}}}}}}}.     -->
+<!--     .-----------------------::::::::::::::::}}}}}}}}}}     -->
+<!--     ------------------------::::::::::::::::}}}}}}}}}}     -->
+<!--     ------------------------::::::::::::::::}}}}}}}}}}     -->
+<!--     ------------------------::::::::::::::::}}}}}}}}}}     -->
+<!--     -----------------::-----:::::::}::::::::}}}}}}}}}}     -->
+<!--     ---------------:hmmd+---:::::smmmy::::::}}}}}}}}}}     -->
+<!--     ---------------+MMMMy---:::::NMMMN}:::::}}}}}}}}}}     -->
+<!--     ----------------oyhs:---:::::}yhy+::::::}}}}}}}}}}     -->
+<!--     ------------------------::::::::::::::::}}}}}}}}}}     -->
+<!--     ------------------------::::::::::::::::}}}}}}}}}}     -->
+<!--     ------------------oso}}:::}}+sy}::::::::}}}}}}}}}}     -->
+<!--     ------------------}oyhhdhhdhys+:::::::::}}}}}}}}}}     -->
+<!--     -----------------------:::::::::::::::::}}}}}}}}}}     -->
+<!--     ------------------------::::::::::::::::}}}}}}}}}}     -->
+<!--     `-----------------------::::::::::::::::}}}}}}}}}.     -->
+<!--      `.---------------------::::::::::::::::}}}}}}}:`      -->
+<!--        `..-----------------::::::::::::::::}}}}::-`        -->
+<!--             ``::::::::::::::::}}}}}}}}}}}}}}-`             -->
+<!--              `::::::::::::::::}}}}}}}}}}}}}}.              -->
+<!--              `::::::::::::::::}}}}}}}}}}}}}}.              -->
+<!--                                                            -->
+<!-- ========================================================   -->
+<!--                                                            -->
+	
+ 
+ */@media print,screen{.infrablock h2,.infrablock h3{margin-top:0}.infrablock ul{margin-top:0;margin-bottom:0}}@media screen{.infrablock{margin-bottom:1rem;padding:1rem;border:5px solid #e2e2e2}.infrablock ul li{display:flex;flex-direction:row;margin-bottom:.5em}.infrablock ul li a,.infrablock ul li:before{flex:1}.infrablock ul li:before{max-width:30px}.infrablock.smartphone ul{padding-left:0}.infrablock.smartphone ul li{list-style-image:none;list-style:none;padding-left:0;margin-left:0}.infrablock.smartphone ul li:before{content:' ';display:inline-block;width:1.68rem;height:1.68rem;background-image:url("data:image/svg+xml;charset=UTF-8,%3Csvg%20height%3D%2224%22%20viewBox%3D%220%200%2024%2024%22%20width%3D%2224%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20d%3D%22m10.343325.9377125c-2.880525-.416925-5.7778875-.416925-8.6584125%200-.74115.110175-1.3099125.7993875-1.3099125%201.4989875v15.1266c.0000375.6996375.5970375%201.388775%201.3381875%201.499025%202.880525.416925%205.7496125.416925%208.6301375%200%20.741225-.1102125%201.281675-.7994625%201.281675-1.499025%200-5.0422125%200-10.0843875%200-15.1266%200-.6996-.54045-1.3888125-1.281675-1.4989875zm-4.343325%2017.3685375c-.54885%200-.99375-.4449-.99375-.99375s.4449-.99375.99375-.99375.99375.4449.99375.99375-.4449.99375-.99375.99375zm4.125-3.05625h-8.25v-12h8.25z%22%20fill%3D%22%23002F3E%22%20transform%3D%22translate(6%202)%22%2F%3E%3C%2Fsvg%3E");background-size:1.4rem 1.4rem;background-repeat:no-repeat;background-position:center center;margin-right:.5em}.infrablock.invulformulier ul{padding-left:0}.infrablock.invulformulier ul li{list-style-image:none;list-style:none;padding-left:0;margin-left:0}.infrablock.invulformulier ul li:before{content:' ';display:inline-block;width:1.68rem;height:1.68rem;background-image:url("data:image/svg+xml;charset=UTF-8,%3Csvg%20height%3D%2224%22%20viewBox%3D%220%200%2024%2024%22%20width%3D%2224%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cg%20fill%3D%22%23002F3E%22%20transform%3D%22translate(4.5%202.625)%22%3E%3Cpath%20d%3D%22m14.25%200h-7.939275c-.1990125%200-.3898125.0790875-.5304375.2197125l-5.560575%205.560575c-.140625.140625-.2197125.331425-.2197125.5304375v11.689275c0%20.41235.3374625.75.75.75h13.5c.4141875%200%20.75-.3358125.75-.75v-17.25c0-.4141875-.3358125-.75-.75-.75zm-1.125%2016.875h-11.25v-10.015575l-1.18065-.34965c-.12795-.040875-.0819375-.134775-.0819375-.134775h5.3875875c.207075%200%20.375-.167925.375-.375v-5.3872125s.0940875-.0411.1349625.086625l.34935%201.1755875h6.2656875z%22%2F%3E%3Cpath%20d%3D%22m7.875%205.25h3.75v1.125h-3.75z%22%2F%3E%3Cpath%20d%3D%22m6%209h5.625v1.125h-5.625z%22%2F%3E%3Cpath%20d%3D%22m3.375%209h1.875v1.125h-1.875z%22%2F%3E%3Cpath%20d%3D%22m6%2011.25h5.625v1.125h-5.625z%22%2F%3E%3Cpath%20d%3D%22m3.375%2011.25h1.875v1.125h-1.875z%22%2F%3E%3Cpath%20d%3D%22m3.375%2013.5h1.875v1.125h-1.875z%22%2F%3E%3Cpath%20d%3D%22m6%2013.5h5.625v1.125h-5.625z%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E");background-size:1.4rem 1.4rem;background-repeat:no-repeat;background-position:center center;margin-right:.5em}.infrablock.paraaf ul{padding-left:0}.infrablock.paraaf ul li{list-style-image:none;list-style:none;padding-left:0;margin-left:0}.infrablock.paraaf ul li:before{content:' ';display:inline-block;width:1.68rem;height:1.68rem;background-image:url("data:image/svg+xml;charset=UTF-8,%3Csvg%20height%3D%2224%22%20viewBox%3D%220%200%2024%2024%22%20width%3D%2224%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cg%20fill%3D%22%23002F3E%22%20transform%3D%22translate(4.5%202.625)%22%3E%3Cpath%20d%3D%22m14.25%200h-7.939275c-.1990125%200-.3898125.0790875-.5304375.2197125l-5.560575%205.560575c-.140625.140625-.2197125.331425-.2197125.5304375v11.689275c0%20.41235.3374625.75.75.75h13.5c.4141875%200%20.75-.3358125.75-.75v-17.25c0-.4141875-.3358125-.75-.75-.75zm-1.125%2016.875h-11.25v-10.015575l-1.18065-.34965c-.12795-.040875-.0819375-.134775-.0819375-.134775h5.3875875c.207075%200%20.375-.167925.375-.375v-5.3872125s.0940875-.0411.1349625.086625l.34935%201.1755875h6.2656875z%22%2F%3E%3Cpath%20d%3D%22m3.9743625%209.5278125c-.23205.1945125-.2878875.5284875-.132675.7879875l2.626425%204.383225c.1108875.1849875.3105.2985375.52605.2992125h.00225c.21465%200%20.4143-.1120125.5260875-.2959125l4.01265-6.6417c.1654125-.271875.0962625-.6250125-.1592625-.8143875-.256425-.1894125-.6139125-.15285-.825975.0842625l-3.6085125%204.0816125-2.1682125-1.87815c-.229275-.198225-.56775-.200925-.798825-.00615z%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E");background-size:1.4rem 1.4rem;background-repeat:no-repeat;background-position:center center;margin-right:.5em}}@media only screen and (max-width:821px){#blok_0{border:0;clip:rect(0 0 0 0);height:1px;margin:-1px;overflow:hidden;padding:0;position:absolute;width:1px}}@media only screen and (min-width:821px){.flex-block{display:flex;flex-flow:row wrap;justify-content:center;margin-top:2rem}.flex-block .kader{padding:1rem;background:#e2e2e2}.flex-block .kader,.flex-block .kader *,.flex-block .kader a{color:#002F3E}.flex-block .infrablock{flex-grow:1;flex-basis:47.5%;max-width:47.5%;margin-left:1.25%;margin-right:1.25%;margin-bottom:0;border-style:none;padding:0}.flex-block .spaak h2{background:#002F3E;max-width:25%;text-align:center;margin-left:auto;margin-right:auto;border-radius:50%;padding:4rem 1rem;margin-top:1rem;margin-bottom:1rem}.flex-block .spaak h2 span{background:#002F3E;color:#fff;padding:.25rem}#blok_0{flex-basis:100%;max-width:100%;order:2}#blok_1{order:1}#blok_1 .kader{position:relative}#blok_1:after{content:' ';background:#e2e2e2;width:30px;height:80px;transform:translateX(-15px);display:block;position:relative;left:50%}#blok_2{order:3}#blok_2:before{transform:rotate(40deg);left:66%}#blok_3{order:4}#blok_3:before{transform:rotate(-40deg);left:25%}#blok_2,#blok_3{margin-top:-40px}#blok_2:before,#blok_3:before{content:' ';background:#e2e2e2;width:30px;height:160px;display:block;position:relative}#blok_2 .kader,#blok_3 .kader{margin-top:-35px}#blok_3{order:4}}
+/*# sourceMappingURL=ictuwp-plugin-stelselplaat-frontend.css.map */

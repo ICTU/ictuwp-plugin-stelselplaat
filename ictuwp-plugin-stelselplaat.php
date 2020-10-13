@@ -5,7 +5,7 @@
 // * Plugin Name:         ICTU / WP Nieuwe opzet stelselplaat digitaleoverheid.nl (2019)
 // * Plugin URI:          https://github.com/ICTU/Digitale-Overheid---WordPress-plugin-Stelselplaat/
 // * Description:         Plugin voor digitaleoverheid.nl waarmee extra functionaliteit mogelijk wordt voor het tonen van de stelselplaat voor de samenhang tussen voorzieningen, standaarden en basisregistraties
-// * Version:             2.0.3.a
+// * Version:             2.0.3.b
 // * Version description: Link naar CSS-bestanden gecheckt.
 // * Author:              Paul van Buuren
 // * Author URI:          https://wbvb.nl
@@ -36,7 +36,7 @@ if ( ! class_exists( 'DO_Stelselplaat' ) ) :
 		/**
 		* @var string
 		*/
-		public $version = '2.0.3.a';
+		public $version = '2.0.3.b';
 		
 		
 		/**
@@ -80,15 +80,15 @@ if ( ! class_exists( 'DO_Stelselplaat' ) ) :
 			$this->option_name        					= 'ictudo_stelselplaat-option';
 
 			define( 'DO_SP_VERSION',                 	$this->version );
-			define( 'DO_SP_FOLDER',                  	'do-stelselplaat' );
+			define( 'DO_SP_FOLDER',                  	'ictuwp-plugin-stelselplaat' );
 			define( 'DO_SP_BASE_URL',                	trailingslashit( plugins_url( DO_SP_FOLDER ) ) );
 			define( 'DO_SP_ASSETS_URL',              	trailingslashit( DO_SP_BASE_URL ) );
 			define( 'DO_SP_PATH',                    	plugin_dir_path( __FILE__ ) );
 			define( 'DO_SP_PATH_LANGUAGES',          	trailingslashit( DO_SP_PATH . 'languages' ) );;
 			
 			
-			define( 'DO_SP_PLUGIN_DO_DEBUG',         	true );
-//			define( 'DO_SP_PLUGIN_DO_DEBUG',        	false );
+//			define( 'DO_SP_PLUGIN_DO_DEBUG',         	true );
+			define( 'DO_SP_PLUGIN_DO_DEBUG',        	false );
 //       	define( 'DO_SP_PLUGIN_OUTPUT_TOSCREEN', 	false );
 			define( 'DO_SP_PLUGIN_OUTPUT_TOSCREEN',		true );
 			define( 'DO_SP_PLUGIN_GENESIS_ACTIVE',		true ); // todo: inbouwen check op actief zijn van Genesis framework
@@ -255,7 +255,7 @@ if ( ! class_exists( 'DO_Stelselplaat' ) ) :
 		/**
 		* Register the options page
 		*
-		* @since    2.0.3.a
+		* @since    2.0.2
 		*/
 		public function do_sp_admin_register_settings() {
 			
@@ -277,7 +277,7 @@ if ( ! class_exists( 'DO_Stelselplaat' ) ) :
 		public function do_sp_admin_register_styles() {
 		
 			if ( is_admin() ) {
-				wp_enqueue_style( 'do-stelselplaat-admin', DO_SP_ASSETS_URL . 'css/do-stelselplaat-admin.css', false, DO_SP_VERSION );
+				wp_enqueue_style( 'ictuwp-plugin-stelselplaat-admin', DO_SP_ASSETS_URL . 'css/ictuwp-plugin-stelselplaat-admin.css', false, DO_SP_VERSION );
 			}
 		
 		}
@@ -315,7 +315,7 @@ if ( ! class_exists( 'DO_Stelselplaat' ) ) :
 			
 			if ( !is_admin() && ( $this->templatefile == $page_template ) ) {
 
-				wp_enqueue_style( DO_SP_ARCHIVE_CSS, DO_SP_ASSETS_URL . 'css/do-stelselplaat-frontend.css', array(), DO_SP_VERSION, 'all' );
+				wp_enqueue_style( DO_SP_ARCHIVE_CSS, DO_SP_ASSETS_URL . 'css/ictuwp-plugin-stelselplaat-frontend.css', array(), DO_SP_VERSION, 'all' );
 
 if ( 22 == 33 ) {
 	
