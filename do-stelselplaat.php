@@ -5,8 +5,8 @@
 // * Plugin Name:         ICTU / WP Nieuwe opzet stelselplaat digitaleoverheid.nl (2019)
 // * Plugin URI:          https://github.com/ICTU/Digitale-Overheid---WordPress-plugin-Stelselplaat/
 // * Description:         Plugin voor digitaleoverheid.nl waarmee extra functionaliteit mogelijk wordt voor het tonen van de stelselplaat voor de samenhang tussen voorzieningen, standaarden en basisregistraties
-// * Version:             2.0.2
-// * Version description: CSS kleur voor iconen verbeterd.
+// * Version:             2.0.3.a
+// * Version description: Link naar CSS-bestanden gecheckt.
 // * Author:              Paul van Buuren
 // * Author URI:          https://wbvb.nl
 // * License:             GPL-2.0+
@@ -36,7 +36,7 @@ if ( ! class_exists( 'DO_Stelselplaat' ) ) :
 		/**
 		* @var string
 		*/
-		public $version = '2.0.2';
+		public $version = '2.0.3.a';
 		
 		
 		/**
@@ -255,7 +255,7 @@ if ( ! class_exists( 'DO_Stelselplaat' ) ) :
 		/**
 		* Register the options page
 		*
-		* @since    2.0.2
+		* @since    2.0.3.a
 		*/
 		public function do_sp_admin_register_settings() {
 			
