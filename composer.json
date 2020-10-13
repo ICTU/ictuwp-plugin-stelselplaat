@@ -1,0 +1,14 @@
+{
+  "name": "ictu/ictuwp-plugin-stelselplaat",
+  "type": "wordpress-plugin",
+  "license": "GPL-3.0",
+  "description": "Stelselplaat voor Digitale Overheid ",
+  "homepage": "https://www.digitaleoverheid.nl",
+  "authors": [
+    {
+      "name": "Paul van Buuren",
+      "email": "paul@wbvb.nl",
+      "homepage": "https://wbvb.nl"
+    }
+  ]
+}
