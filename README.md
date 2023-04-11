@@ -10,5 +10,5 @@ Plugin voor tonen en bijhouden stelselplaat op digitaleoverheid.nl
 * 
 
 ## Current version:
-2.0.3 - Link naar CSS-bestanden gecheckt.
+2.0.4 - Check for PHP8.x compliancy.
 

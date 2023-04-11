@@ -9,8 +9,8 @@
 // * @author  Paul van Buuren
 // * @license GPL-2.0+
 // * @plugin: do-stelselplaat
-// * version: 2.0.3
-// * @desc.   Link naar CSS-bestanden gecheckt.
+// * version: 2.0.4
+// * @desc.   Check for PHP8.x compliancy.
 // * @link    https://github.com/ICTU/Digitale-Overheid---WordPress-plugin-Stelselplaat/
 
 
@@ -47,11 +47,11 @@
 <!--                                                            -->
 <!-- ========================================================   -->
 <!--                                                            -->
-	
- 
+
+
  */
 
-@import "01-sizes-colors.less";  
+@import "01-sizes-colors.less";
 
 @flexbasis_twocols:   47.5%;
 @flexmargin:          ( ( 50% - @flexbasis_twocols ) / 2 );
@@ -66,13 +66,13 @@
 //========================================================================================================
 
 @media print, screen {
-	
+
 	.infrablock {
-		
+
 		h2, h3 {
 			margin-top: 0;
 		}
-		
+
 		ul {
 			margin-top: 0;
 			margin-bottom: 0;
@@ -87,48 +87,48 @@
 
 	.infrablock {
 		margin-bottom: 1rem;
-		padding: 1rem;  
+		padding: 1rem;
 		border: 5px solid @achtergrond;
-		
+
 		ul li {
 			display: flex;
 			flex-direction: row;
 			margin-bottom: .5em;
-			
+
 			&:before,
 			a {
 				flex: 1;
 			}
-			
+
 			&:before {
 				max-width: 30px;
 			}
-	
+
 		}
-		
+
 		&.smartphone {
 			ul {
 				padding-left: 0;
 				li {
 					.iconaddfill( '../assets/images/list-icon-smartphone.svg', @dekleur, 28);
-				}		
-			}		
+				}
+			}
 		}
 		&.invulformulier {
 			ul {
 				padding-left: 0;
 				li {
 					.iconaddfill( '../assets/images/list-icon-invulformulier.svg', @dekleur, 28);
-				}		
-			}		
+				}
+			}
 		}
 		&.paraaf {
 			ul {
 				padding-left: 0;
 				li {
 					.iconaddfill( '../assets/images/list-icon-paraaf.svg', @dekleur, 28);
-				}		
-			}		
+				}
+			}
 		}
 	}
 }
@@ -155,7 +155,7 @@
 		.kader {
 			padding: 1rem;
 			background: @achtergrond;
-			
+
 			&, *, a {
 				color: @dekleur;
 			}
@@ -191,7 +191,7 @@
 			}
 		}
 	}
-	
+
 	#blok_0 {
 		flex-basis: 100%;
 		max-width: 100%;
@@ -199,7 +199,7 @@
 	}
 	#blok_1 {
 		order: 1;
-		
+
 		.kader {
 			position: relative;
 //			padding-bottom: @pijlhoogte;
@@ -230,11 +230,11 @@
 			left: 25%;
 		}
 	}
-	
+
 	#blok_2,
 	#blok_3 {
 		margin-top: -40px;
-		
+
 		&:before {
 			content: ' ';
 			background: @achtergrond;
@@ -250,7 +250,7 @@
 	#blok_3 {
 		order: 4;
 	}
-	
+
 }
 
 
@@ -258,7 +258,7 @@
 //========================================================================================================
 
 @media only screen and ( max-width: @breakpoint_chart ) {
-  
+
 }
 
 //=========================================================================================================
@@ -276,7 +276,7 @@
 	list-style: none;
 	padding-left: 0;
 	margin-left: 0;
-	
+
 	&:before {
 		content: ' ';
 		display: inline-block;
@@ -294,7 +294,7 @@
 //=========================================================================================================
 
 @media print {
-  
+
 }
 
 //========================================================================================================
