@@ -45,6 +45,8 @@ if ( ! class_exists( 'DO_Stelselplaat' ) ) :
 
 		public $option_name = null;
 
+		public $templates = '';
+		public $templatefile = '';
 
 		/**
 		 * Init
