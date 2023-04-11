@@ -5,8 +5,8 @@
 // * Plugin Name:         ICTU / WP Nieuwe opzet stelselplaat digitaleoverheid.nl (2019)
 // * Plugin URI:          https://github.com/ICTU/Digitale-Overheid---WordPress-plugin-Stelselplaat/
 // * Description:         Plugin voor digitaleoverheid.nl waarmee extra functionaliteit mogelijk wordt voor het tonen van de stelselplaat voor de samenhang tussen voorzieningen, standaarden en basisregistraties
-// * Version:             2.0.3
-// * Version description: Link naar CSS-bestanden gecheckt.
+// * Version:             2.0.4
+// * Version description: Check for PHP8.x compliancy.
 // * Author:              Paul van Buuren
 // * Author URI:          https://wbvb.nl
 // * License:             GPL-2.0+
@@ -36,7 +36,7 @@ if ( ! class_exists( 'DO_Stelselplaat' ) ) :
 		/**
 		 * @var string
 		 */
-		public $version = '2.0.3';
+		public $version = '2.0.4';
 
 
 		/**
@@ -222,7 +222,6 @@ if ( ! class_exists( 'DO_Stelselplaat' ) ) :
 
 			// add styling and scripts
 			add_action( 'wp_enqueue_scripts', array( $this, 'do_sp_frontend_register_frontend_style_script' ) );
-			add_action( 'admin_enqueue_scripts', array( $this, 'do_sp_admin_register_styles' ) );
 
 
 		}
@@ -272,37 +271,6 @@ if ( ! class_exists( 'DO_Stelselplaat' ) ) :
 				DO_SP_PLUGIN_KEY
 			);
 
-		}
-
-		//========================================================================================================
-
-		/**
-		 * Register admin-side styles
-		 */
-		public function do_sp_admin_register_styles() {
-
-			if ( is_admin() ) {
-				wp_enqueue_style( 'ictuwp-plugin-stelselplaat-admin', DO_SP_ASSETS_URL . 'css/ictuwp-plugin-stelselplaat-admin.css', false, DO_SP_VERSION );
-			}
-
-		}
-
-		//========================================================================================================
-
-		/**
-		 * Add the help tab to the screen.
-		 */
-		public function do_sp_admin_help_tab() {
-
-			$screen = get_current_screen();
-
-			// documentation tab
-			$screen->add_do_sp_admin_help_tab( array(
-					'id'      => 'documentation',
-					'title'   => __( 'Documentation', "do-stelselplaat" ),
-					'content' => "<p><a href='https://github.com/ICTU/Digitale-Overheid---WordPress-plugin-Stelselplaat/documentation/' target='blank'>" . __( 'Stelselplaat documentatie', "do-stelselplaat" ) . "</a></p>",
-				)
-			);
 		}
 
 		//========================================================================================================
